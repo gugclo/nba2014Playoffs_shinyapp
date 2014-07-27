@@ -23,8 +23,6 @@ shinyUI(
             h6("This Shiny App will generate simulated predictions based on ELO Ratings from 2013-2014 Regular Season.  All you have to do is select home and away teams from the sidebar panel and hit Simulate Matchup!"),
             h5("How it works:"),
             h6("Once the user has selected a home and away team, each team is run through a seriesSimulation function that runs a Monte Carlo simulation for a 7 game series using win probabilities calculated from each teams ELO rating with a home-court adjustment."),
-            h5("Note:"),
-            h6("I am still resolving issues with the simulation so clicking the action button may not generate a new simulation each time."),
             p("Data Frame of NBA 2014 Playoff Teams with ELO Rating:"),
             verbatimTextOutput("nba"),
             p("Series Result:"),

@@ -1,6 +1,6 @@
 library(shiny)
 
-seriesSimulation = function(team1,team2,elo1,elo2,homeCourtAdj,K,C){
+seriesSimulation = function(team1,team2,elo1,elo2,homeCourtAdj=50,K=12,C=250){
     
     team1wins = 0
     team2wins = 0
@@ -61,8 +61,7 @@ shinyServer(
         output$nba <- renderPrint({nba2014Playoffs})
         output$df <- renderPrint({
             input$goButton
-            seriesSimulation(input$homeTeam,input$awayTeam,nba2014Playoffs[nba2014Playoffs$Team==input$homeTeam,4],nba2014Playoffs[nba2014Playoffs$Team==input$awayTeam,4],50,250,12)
+            seriesSimulation(input$homeTeam,input$awayTeam,nba2014Playoffs[nba2014Playoffs$Team==input$homeTeam,4],nba2014Playoffs[nba2014Playoffs$Team==input$awayTeam,4])
             })
-        #output$random <- renderPrint({round(runif(input$n),3)})
     }
 )
